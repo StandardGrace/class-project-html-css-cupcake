@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Trish's Treats</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <nav>
+        <ul class="sidebar"> <!-- Hidden on large screen, visible on small screens -->
+            <li onclick="hideSidebar()"><a href=""><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#082a13"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li> <!-- Sidebar icon cribbed from google - I got the idea from a great tutorial -->
+            <li><a href="menu.html">Cupcakes</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <ul>
+            <li><a href="index.html"><img src="images/logo-icon.png" alt="Trish's Treats"></a></li>
+            <li class="hide-on-mobile"><a href="menu.html">Cupcakes</a></li>
+            <li class="hide-on-mobile"><a href="about.html">About</a></li>
+            <li class="hide-on-mobile"><a href="contact.html">Contact</a></li>
+            <li class="menu-button" onclick="showSidebar()"><a href="javascript:void(0)"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#082a13"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li> <!-- Another icon from Google -->
+        </ul>
+    </nav>
+
+    <main>
+    <div class="menu-grid">
+        <!-- I was lucky to find some good information and utilize it as this use of flex boxes within a grid makes an elegant solution to adaptive sizing without needing to make multiple designs to accomidate different screen sizes. This particular use eliminates the need for media queries. My original idea was a bento-box configuration, but the layout proved too complicated to implement in the alloted time. Maybe a future version will have a more "fun" approach.
+         
+        Looking back, I could have likely made better use of descent selectors rather than using classes, but going back to change things after the fact gives little benefit and would not hugely streamline the code, so I figure my time is better spent on other parts of the project.-->
+        
+        <div class="item-card">
+            <img width="200px" src="images/cupcake-choc-choc-chip.jpg" alt="Chocolate Chocolate Chip Cupcake" class="card-image">
+            <h4 class="card-title">Chocolate Chocolate Chip</h4>
+            <p class="card-description">Chocolate chips in a chocolate cupcake. A chocolate-lover's dream.</p>
+            <a href="" class="card-button" id="cupcake-choc-choc-chip-order">Order</a>
+        </div>
+
+        <div class="item-card" >
+            <img width="200px" src="images/cupcake-birthday-cake.jpg" alt="Birthday Cupcake" class="card-image">
+            <h4 class="card-title">Birthday (Cup)Cake</h4>
+            <p class="card-description">Tastiest when eaten in birthday suit.</p>
+            <a href="" class="card-button" id="cupcake-birthday-cake-order">Order</a>
+        </div>
+
+        <div class="item-card" >
+            <img width="200px" src="images/cupcake-strawberry.jpg" alt="Strawberry Cupcake" class="card-image">
+            <h4 class="card-title">Strawberry Cupcake</h4>
+            <p class="card-description">Strawberry Shortcake has nothing on this berry good treat.</p>
+            <a href="" class="card-button" id="cupcake-strawberry-order">Order</a>
+        </div>
+
+        <div class="item-card" >
+            <img width="200px" src="images/cupcake-rainbow.jpg" alt="Rainbow Cupcake" class="card-image">
+            <h4 class="card-title">Rainbow Delight</h4>
+            <p class="card-description">Tasting this rainbow is even better than finding a pot of gold!</p>
+            <a href="" class="card-button" id="cupcake-rainbow-order">Order</a>
+        </div>
+
+        <div class="item-card" >
+            <img width="200px" src="images/cupcake-chocolate-frosty.jpg" alt="Chocolate Frosted Cupcake" class="card-image">
+            <h4 class="card-title">Chocolate Frosty</h4>
+            <p class="card-description">Out-frost both the snowman and the dairy queen!</p>
+            <a href="" class="card-button" id="cupcake-chocolate-frosty-order">Order</a>
+        </div>
+
+        <div class="item-card" >
+            <img width="200px" src="images/cupcake-cookie-monster.jpg" alt="Cookie Monster Cupcake" class="card-image">
+            <h4 class="card-title">Cookie Monster</h4>
+            <p class="card-description">Me like cookies! And cupcakes!</p>
+            <a href="" class="card-button" id="cupcake-cookie-monster-order">Order</a>
+        </div>
+
+        <div class="item-card" >
+            <img width="200px" src="images/cupcake-lemon.jpg" alt="Lemon Cupcake" class="card-image">
+            <h4 class="card-title">Lemon Zest</h4>
+            <p class="card-description">When life gives you lemons, have a cupcake!</p>
+            <a href="" class="card-button" id="cupcake-lemon-order">Order</a>
+        </div>
+
+        <div class="item-card" >
+            <img width="200px" src="images/cupcake-red-velvet.jpg" alt="Red Velvet Cupcake" class="card-image">
+            <h4 class="card-title">Red Velvet</h4>
+            <p class="card-description">The cupcake of passion. Because it's red.</p>
+            <a href="" class="card-button" id="cupcake-red-velvet-order">Order</a>
+        </div>
+
+        <div class="item-card" >
+            <img width="200px" src="images/cupcake-mudslide.jpg" alt="Mudslide Cupcake" class="card-image">
+            <h4 class="card-title">Mudslide</h4>
+            <p class="card-description">Tastes so much better than the real thing.</p>
+            <a href="" class="card-button" id="cupcake-mudslide-order">Order</a>
+        </div>
+
+    </div>
+    </main>
+
+    <footer>
+        <ul>
+            <li>&copy; 2026 - <a href="https://www.patrickmgrace.com/">Standard Grace</a></li>
+        </ul>
+    </footer>
+<!-- Sidebar Control Script -- I cheated a bit here and used some minor javascript to control the sidebar. I got the idea from a tutorial and its simple enough that I understand how and why it works, so I figured I would be safe to use it. -->
+    <script>
+        function showSidebar(){
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'flex'
+        }
+        function hideSidebar(){
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'none'            
+        }
+    </script>
+</body>
+</html>

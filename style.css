@@ -1,0 +1,435 @@
+/* CSS style page for menu */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Gill Sans", Tahoma, Arial, sans-serif;
+    color: #1c0333;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Keeps it behind everything */
+    
+    /* Background setup */
+    background-image: url("images/islandpark.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(238, 207, 254, 0.4); 
+    background-blend-mode: overlay;
+
+    /* Blur effects */
+    filter: blur(8px);
+    transform: scale(1.1); /* Zooms the background slightly so the blur doesn't show white edges */
+}
+
+/* 
+
+Navbar Section 
+
+*/
+nav {
+    background-color: rgba(184, 226, 242, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+
+}
+
+nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex; /* Make nav horizontal and responsive fit */
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav li {
+    height: 5.5em;
+}
+
+nav a {
+    height: 100%;
+    padding: 0 2em;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: #082a13;
+    letter-spacing: 0.1em;
+    transition: background-color 0.3s ease; /* Hover fade */
+}
+
+nav a:hover {
+    background-color: #08f0ff;
+}
+
+nav a:active {
+    background-color: #3edacd;
+    color: white; /* Change text color so still visible on background */
+    transition: none; /* Removes fade for the click so it feels like a fast "flash". This is just to make it look as good and responsive as possible */
+}
+
+nav li:first-child {
+    margin-right: auto; /* Seperates the home button that doubles as logo */
+    margin-left: 2rem;
+}
+
+nav li:first-child img {
+    width: 4.6em;
+    height: 4.6em;
+    border-radius: 20px;
+    object-fit: contain; /* Ensures the logo isn't squished */
+}
+
+nav li:first-child a {
+    padding: 0;
+    justify-content: center;
+}
+
+.sidebar {
+    /* This is hamburger menu to be hidden unless needed on small device */
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(184, 226, 242, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sidebar li {
+    width: 100%;
+}
+
+.sidebar a {
+    width: 100%;
+}
+
+.menu-button {
+    display: none;
+}
+
+@media(max-width: 497px){
+    .hide-on-mobile{
+        display: none;
+    }
+    .menu-button {
+        display: block;
+    }
+}
+
+@media(max-width: 400px){
+    .sidebar{
+        width: 100%;
+    }
+}
+
+/* Main Section  */
+main {
+  flex: 1; /* Allows content to grow and fill empty space */
+}
+
+.highlight-grid { /* Reuse of grid code from menu page for highlighted products on main page */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    margin-left: 4em;
+    margin-right: 4em;
+    margin-top: 1em;
+    justify-content: center;
+    padding: 2rem;
+    gap: 1rem;
+
+}
+
+.welcome-blurb{
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+    padding: 2em 2em;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid #b8e2f2;
+    border-radius: 20px;
+
+}
+
+.welcome-blurb h1 {
+    font-family: Garamond, 'Times New Roman', Times, serif, sans-serif;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    text-align: center;
+    padding: 1em 1em;
+}
+
+.welcome-blurb p {
+    font-weight: 500;
+}
+
+/* About page section */
+/* This was the most simple part. I would have liked to add more info or pictures, but I had none available that made any sense to use. */
+
+.about-blurb{
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    padding: 2em 2em;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid #b8e2f2;
+    border-radius: 20px;
+}
+
+.about-blurb h1 {
+    font-family: Garamond, 'Times New Roman', Times, serif, sans-serif;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    text-align: center;
+    padding: 1em 1em;
+}
+
+.about-blurb p {
+    font-weight: 500;
+    padding: 1em 1em;
+}
+
+/* Contact page */
+/* The forms are frustrating - they take a lot of code and don't work without a backend. I think this will be more fulfilling when I can create a backend to accept and process the data.*/
+
+.contact-blurb {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+    padding: 2em 2em;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid #b8e2f2;
+    border-radius: 20px;
+}
+
+.contact-blurb h1 {
+    font-family: Garamond, 'Times New Roman', Times, serif, sans-serif;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    text-align: center;
+    padding: 1em 1em;
+}
+
+.contact-blurb p {
+    font-weight: 500;
+    padding: 1em 1em;
+    text-align: center;
+}
+
+.contact-form {
+    margin-top: 2em;
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 1.5em;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 0.5em;
+    color: #1c0333;
+    font-family: "Gill Sans", Tahoma, Arial, sans-serif;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.8em;
+    border: 2px solid #082a13;
+    border-radius: 5px;
+    font-family: "Gill Sans", Tahoma, Arial, sans-serif;
+    font-size: 1rem;
+    color: #1c0333;
+    background-color: rgba(255, 255, 255, 0.7);
+    transition: background-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-color: #08f0ff;
+    box-shadow: 0 0 8px rgba(8, 240, 255, 0.3);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+    font-family: "Gill Sans", Tahoma, Arial, sans-serif;
+}
+
+.submit-btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: purple;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    align-self: flex-end;
+    margin-top: 1em;
+    width: 100%;
+    max-width: 300px;
+}
+
+.submit-btn:hover {
+    background-color: #28a745;
+}
+
+.submit-btn:active {
+    background-color: white;
+    color: purple;
+    transition: none;
+}
+
+@media(max-width: 600px) {
+    .contact-blurb {
+        max-width: 90%;
+        padding: 1.5em 1em;
+    }
+
+    .contact-blurb h1 {
+        padding: 0.8em 0;
+    }
+
+    .contact-blurb p {
+        padding: 0.5em 0;
+    }
+
+    .submit-btn {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* Footer Section */
+/* This is mostly a very simple version of the navbar */
+footer {
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer ul {
+    width: 100%;
+    list-style: none;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    color: #b8e2f2;
+}
+footer a {
+    text-decoration: none;
+    color: #b8e2f2;
+}
+
+
+
+/* Menu Section */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); /* Auto-resize magic. Calculates how many full columns can fit, and expands to fill in fractional sizes. I'm proud of this part! */
+    justify-content: center;
+    background-color: #d2afff;
+    padding: 2rem;
+    gap: 1rem;
+
+}
+
+
+.item-card {
+    display: flex; /* Using a flex box wwithin a grid makes everything fit nicely without additional manual calculations. */
+    flex-direction: column;
+    background-color: #8dd6de;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 1.5rem;
+    font-size: 1rem;
+    align-items: center;
+    text-align: center;
+}
+
+
+.card-image {
+    height: auto; /* To make sure all item cards are equal height. */
+    border-radius: 10px;
+}
+
+
+.card-title {
+    font-family: Garamond, Times, serif;
+    font-size: 1.2rem;
+    min-height: 2.8em;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.card-description{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-button{
+    display: inline-block;
+    margin-top: auto; /* Pushes the button to the bottom of the card */
+    align-self: center;
+    padding: 1rem 2rem;
+    background-color: purple;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease; /*Hover fade effect. Another lucky find that I was happy to use.*/
+}
+
+.card-button:hover {
+    background-color: #28a745; /* Hover colour change for UX feedback */
+}
+
+.card-button:active {
+    background-color: white;
+    color: purple; /* Change text color so Order is still visible on white */
+    transition: none; /* Removes fade for the click so it feels like a fast "flash". This is just to make it look as good and responsive as possible */
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trish's Treats</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <nav>
+        <ul class="sidebar"> <!-- Hidden on large screen, visible on small screens -->
+            <li onclick="hideSidebar()"><a href=""><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#082a13"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li> <!-- Sidebar icon cribbed from google - I got the idea from a great tutorial -->
+            <li><a href="menu.html">Cupcakes</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <ul>
+            <li><a href="index.html"><img src="images/logo-icon.png" alt="Trish's Treats"></a></li>
+            <li class="hide-on-mobile"><a href="menu.html">Cupcakes</a></li>
+            <li class="hide-on-mobile"><a href="about.html">About</a></li>
+            <li class="hide-on-mobile"><a href="contact.html">Contact</a></li>
+            <li class="menu-button" onclick="showSidebar()"><a href="javascript:void(0)"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#082a13"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li> <!-- Another icon from Google -->
+        </ul>
+    </nav>
+    <main>
+        <div class="welcome-blurb">
+            <h1> Tastiest Cupcakes in Glengarry!</h1>
+            <p>There is no such thing as a bad cupcake. But, once you've had one of Trish's Treats cupcakes, your definition of the cupcake hierarchy will be radically shifted. These are the best cupcakes in Alexandria, Glengarry township, and possibly all of Eastern Ontario. Stop by, enjoy some of the finest hospitality in Canada, and see how your opinions on the cupcake hierarchy of goodness have radically shifted thanks to our all-natural, farm-fresh ingredients and plenty of small-town love. See you soon in Alexandria!</p>
+        </div>
+        <!-- Product teaser section - for promoting 3 cupcakes on the landing page-->
+        <div class="highlight-grid">
+            <div class="item-card">
+                <img width="200px" src="images/cupcake-choc-choc-chip.jpg" alt="Chocolate Chocolate Chip Cupcake" class="card-image">
+                <h4 class="card-title">Chocolate Chocolate Chip</h4>
+                <p class="card-description">Chocolate chips in a chocolate cupcake. A chocolate-lover's dream.</p>
+                <a href="" class="card-button" id="cupcake-choc-choc-chip-order">Order</a>
+            </div>
+
+            <div class="item-card" >
+                <img width="200px" src="images/cupcake-birthday-cake.jpg" alt="Birthday Cupcake" class="card-image">
+                <h4 class="card-title">Birthday (Cup)Cake</h4>
+                <p class="card-description">Tastiest when eaten in birthday suit.</p>
+                <a href="" class="card-button" id="cupcake-birthday-cake-order">Order</a>
+            </div>
+
+            <div class="item-card" >
+                <img width="200px" src="images/cupcake-strawberry.jpg" alt="Strawberry Cupcake" class="card-image">
+                <h4 class="card-title">Strawberry Cupcake</h4>
+                <p class="card-description">Strawberry Shortcake has nothing on this berry good treat.</p>
+                <a href="" class="card-button" id="cupcake-strawberry-order">Order</a>
+            </div>
+        </div> 
+        
+    </main>
+
+    <footer>
+        <ul>
+            <li>&copy; 2026 - <a href="https://www.patrickmgrace.com/">Standard Grace</a></li>
+        </ul>
+    </footer>
+<!-- Sidebar Control Script -- I cheated a bit here and used some minor javascript to control the sidebar. I got the idea from a tutorial and its simple enough that I understand how and why it works, so I figured I would be safe to use it. -->
+    <script>
+        function showSidebar(){
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'flex'
+        }
+        function hideSidebar(){
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'none'            
+        }
+    </script>
+</body>
+</html>

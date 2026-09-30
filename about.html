@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trish's Treats</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <nav>
+        <ul class="sidebar"> <!-- Hidden on large screen, visible on small screens -->
+            <li onclick="hideSidebar()"><a href=""><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#082a13"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li> <!-- Sidebar icon cribbed from google - I got the idea from a great tutorial -->
+            <li><a href="menu.html">Cupcakes</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <ul>
+            <li><a href="index.html"><img src="images/logo-icon.png" alt="Trish's Treats"></a></li>
+            <li class="hide-on-mobile"><a href="menu.html">Cupcakes</a></li>
+            <li class="hide-on-mobile"><a href="about.html">About</a></li>
+            <li class="hide-on-mobile"><a href="contact.html">Contact</a></li>
+            <li class="menu-button" onclick="showSidebar()"><a href="javascript:void(0)"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#082a13"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li> <!-- Another icon from Google -->
+        </ul>
+    </nav>
+
+    <main>
+        <div class="about-blurb">
+            <h1>Dreams can come true...</h1>
+            <p>Trish always enjoyed baking, but, at best, it was the occasional enjoyable treat for the family. As the experiments with new recipes grew more elaborate, Trish's treats became more and more popular among friends and family. </p>
+            <p>"You should open a business and sell these. They are amazing!" friends kept on saying, but Trish always chalked up their compliments as just being polite. Trish had no idea just how amazing her gourmet concoctions were.</p>
+            <p>Finally, as time progressed, and with enough encouragement, Trish tried her hand at going pro, and now finally all of Eastern Ontario can enjoy some sweet sweet Trish's Treats.</p>
+            <p>So come join us in Alexandria, Ontario for some of the best cupcakes that have ever existed. See you there!</p>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <ul>
+            <li>&copy; 2026 - <a href="https://www.patrickmgrace.com/">Standard Grace</a></li>
+        </ul>
+    </footer>
+<!-- Sidebar Control Script -- I cheated a bit here and used some minor javascript to control the sidebar. I got the idea from a tutorial and its simple enough that I understand how and why it works, so I figured I would be safe to use it. -->
+    <script>
+        function showSidebar(){
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'flex'
+        }
+        function hideSidebar(){
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'none'            
+        }
+    </script>
+</body>
+</html>
